@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Точки продаж: где продаются отбеливающие полоски Rigel</title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+123123123 asd asd asd
+sadfasdf asd asd as fasd
+asdadf
+asdasda
+<div class="dsf">
+  sd2312312
+</div>
+<p>sadfdsads</p>
+<p>sadfdsads</p>
+<p>sadfdsads</p>
+<p>sadfdsads</p>
+<p>sadfdsads</p>
+<p>sadfdsads</p>
+<p>sadfdsads</p>
+<p>sadfdsads</p>
+
+<script>
+onPlayerStateChange = function (event) {
+    if (event.data == YT.PlayerState.ENDED) {
+       /// $('.start-video').fadeIn('normal');
+    }
+}
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/player_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+
+  var player1;
+  var player2;
+  function onYouTubePlayerAPIReady() {
+    player1 = new YT.Player('player1', {
+      height: '100%', width: '100%',
+      videoId: 'M7lc1UVf-VE',
+        playerVars: {'autoplay': 0,'rel': 0,'cc_load_policy': 0,'controls': 0,'fs': 0,'rel': 0,'showinfo': 0,'iv_load_policy':3,'modestbranding': 0,'showinfo': 0 },
+        events: {'onStateChange': onPlayerStateChange}
+    });
+    player2 = new YT.Player('player2', {
+      height: '100%', width: '100%',
+      videoId: 'NcH8Gc48atQ',
+        playerVars: {'autoplay': 0,'rel': 0,'cc_load_policy': 0,'controls': 0,'fs': 0,'rel': 0,'showinfo': 0,'iv_load_policy':3,'modestbranding': 0,'showinfo': 0 },
+        events: {'onStateChange': onPlayerStateChange}
+    });
+
+  }
+
+$(document).on('click', '.start-video', function () {
+    player1.playVideo();
+});
+$(document).on('click', '.stop-video', function () {
+    player2.playVideo();
+//    player1.pauseVideo();
+});
+
+
+/*
+
+$data = file_get_contents("https://www.googleapis.com/youtube/v3/videos?key=YOUR_API_KEY&part=snippet&id=T0Jqdjbed40");
+$json = json_decode($data);
+var_dump($json->items[0]->snippet->thumbnails);
+*/
+</script>
+<!-- 
+<span class="start-video" id="start1">START</span><div id="player1"></div>
+
+<span class="start-video" id="start2">START</span><div id="player2"></div>
+ -->
+<!--
+<img src="http://img.youtube.com/vi/M7lc1UVf-VE/hqdefault.jpg">   4:3  ezxept mqdefault.jpg  16:9 -->
+
+</body>
+</html>
